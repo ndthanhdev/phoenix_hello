@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-app
+  labels:
+    app: hello
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello
+  template:
+    metadata:
+      labels:
+        app: hello
+    spec:
+      containers:
+      - name: hello
+        image: ghcr.io/ndthanhdev/phoenix_hello:latest
+        ports:
+        - containerPort: 4000
+        env:
+{{ include "env" . | indent 10 }}
