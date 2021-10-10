@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: hello
-        image: ghcr.io/ndthanhdev/phoenix_hello:latest
+        image: ghcr.io/ndthanhdev/phoenix_hello:release
         ports:
         - containerPort: 4000
         env:
